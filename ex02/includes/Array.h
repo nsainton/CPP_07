@@ -1,5 +1,6 @@
 #ifndef __ARRAY_H__
 # define __ARRAY_H__
+# include <ostream>
 
 template <typename T>
 class	Array{
@@ -16,5 +17,7 @@ class	Array{
 		const unsigned int	& size();
 };
 
+template <typename T>
+std::ostream &	operator<<(std::ostream &, const Array<T> &);
 # include "Array.tpp"
 #endif

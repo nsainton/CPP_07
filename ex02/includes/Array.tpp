@@ -63,3 +63,17 @@ template <typename T>
 const unsigned int	& Array<T>::size(){
 	return (this->_size);
 }
+
+template <typename T>
+std::ostream&	operator<<(std::ostream & os, const Array<T> & ar)
+{
+	unsigned int	i(0);
+
+	os << "Printing array" << std::endl;
+	while (i < ar.size())
+	{
+		os << "ar[" << i << "]: " << ar[i] << std::endl;
+		++i;
+	}
+	return (os);
+}
