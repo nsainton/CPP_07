@@ -5,22 +5,22 @@
 template <typename T>
 Array<T>::Array(){
 	std::clog << "Array Default Constructor Called" << std::endl;
-	elements = NULL;
+	this->_elements = NULL;
 }
 
 template <typename T>
-Array<T>::Array( const unsigned int n ) : size(n){
+Array<T>::Array( const unsigned int n ) : _size(n){
 	std::clog << "Array Integer Constructor Called" << std::endl;
-	if (! size)
-		elements = NULL;
+	if (! _size)
+		this->_elements = NULL;
 	else
-		elements = new T[n];
+		this->_elements = new T[n];
 }
 
 template <typename T>
-Array<T>::Array( const Array & other ) : size(other.size){
+Array<T>::Array( const Array & other ) : _size(other._size){
 	std::clog << "Array Copy Constructor Called" << std::endl;
-	this->elements = new T[other.size];
+	this->_elements = new T[other.size];
 }
 
 template <typename T>
@@ -30,15 +30,15 @@ Array<T>&	Array<T>::operator=( const Array<T> & other ){
 
 	if (*this == other)
 		return (*this);
-	if (this->elements != NULL)
-		delete[] this->elements;
-	if (! other.size)
+	if (this->_elements != NULL)
+		delete[] this->_elements;
+	if (! other._size)
 		return (*this);
-	this->elements = new T[other.size];
-	this->size = other.size;
-	while (i < other.size)
+	this->_elements = new T[other._size];
+	this->_size = other._size;
+	while (i < other._size)
 	{
-		*(this->elements + i) = *(other.elements + i);
+		*(this->_elements + i) = *(other._elements + i);
 		++i;
 	}
 	return (*this);
@@ -47,7 +47,7 @@ Array<T>&	Array<T>::operator=( const Array<T> & other ){
 template <typename T>
 T&		Array<T>::operator[]( const unsigned int & n )
 {
-	if (n >= this->size)
+	if (n >= this->_size)
 		throw (std::exception());
 	return (*(this->elements + n));
 }
@@ -55,6 +55,11 @@ T&		Array<T>::operator[]( const unsigned int & n )
 template <typename T>
 Array<T>::~Array(){
 	std::clog << "Array Destructor Called" << std::endl;
-	if (this->elements != NULL)
-		delete[] this->elements;
+	if (this->_elements != NULL)
+		delete[] this->_elements;
+}
+
+template <typename T>
+const unsigned int	& Array<T>::size(){
+	return (this->_size);
 }
