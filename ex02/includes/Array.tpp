@@ -28,7 +28,7 @@ Array<T>&	Array<T>::operator=( const Array<T> & other ){
 	std::clog << "Array Copy Assignment Operator Called" << std::endl;
 	unsigned int	i(0);
 
-	if (*this == other)
+	if (this == &other)
 		return (*this);
 	if (this->_elements != NULL)
 		delete[] this->_elements;
