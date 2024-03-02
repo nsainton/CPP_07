@@ -45,11 +45,11 @@ Array<T>&	Array<T>::operator=( const Array<T> & other ){
 }
 
 template <typename T>
-T&		Array<T>::operator[]( const unsigned int & n )
+T&		Array<T>::operator[]( const unsigned int & n ) const
 {
 	if (n >= this->_size)
 		throw (std::exception());
-	return (*(this->elements + n));
+	return (*(this->_elements + n));
 }
 
 template <typename T>
@@ -60,7 +60,7 @@ Array<T>::~Array(){
 }
 
 template <typename T>
-const unsigned int	& Array<T>::size(){
+const unsigned int	& Array<T>::size() const {
 	return (this->_size);
 }
 
@@ -70,6 +70,7 @@ std::ostream&	operator<<(std::ostream & os, const Array<T> & ar)
 	unsigned int	i(0);
 
 	os << "Printing array" << std::endl;
+	os << "Array size is : " << ar.size() << std::endl;
 	while (i < ar.size())
 	{
 		os << "ar[" << i << "]: " << ar[i] << std::endl;
