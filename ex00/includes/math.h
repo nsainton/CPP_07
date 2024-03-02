@@ -2,11 +2,26 @@
 # define __MATH_H__
 
 template <typename T>
-void	swap(T & a, T & b);
+void	swap(T & a, T & b){
+	T	c;
+
+	c = a;
+	a = b;
+	b = c;
+}
 
 template <typename T>
-T		min(T & a, T & b);
+T	min(T & a, T & b){
+	if (a < b)
+		return (a);
+	return (b);
+}
 
 template <typename T>
-T		max(T & a, T & b);
+T	max(T & a, T & b){
+	if (a < b)
+		return (b);
+	return (a);
+}
+
 #endif
