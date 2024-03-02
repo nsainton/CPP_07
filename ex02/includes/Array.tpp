@@ -45,6 +45,14 @@ Array<T>&	Array<T>::operator=( const Array<T> & other ){
 }
 
 template <typename T>
+T&		Array<T>::operator[]( const unsigned int n )
+{
+	if (n >= this->size)
+		throw (std::exception());
+	
+}
+
+template <typename T>
 Array<T>::~Array(){
 	std::clog << "Array Destructor Called" << std::endl;
 }
