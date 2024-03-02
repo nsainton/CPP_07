@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := all
 
-NAME := identification
+NAME := maths_functions
 
 CXX := c++
 
