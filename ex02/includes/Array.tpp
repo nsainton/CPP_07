@@ -3,7 +3,7 @@
 #include <exception>
 
 template <typename T>
-Array<T>::Array(){
+Array<T>::Array() : _size(0){
 	std::clog << "Array Default Constructor Called" << std::endl;
 	this->_elements = NULL;
 }
@@ -20,7 +20,7 @@ Array<T>::Array( const unsigned int n ) : _size(n){
 template <typename T>
 Array<T>::Array( const Array & other ) : _size(other._size){
 	std::clog << "Array Copy Constructor Called" << std::endl;
-	this->_elements = new T[other.size];
+	this->_elements = new T[other._size];
 }
 
 template <typename T>
