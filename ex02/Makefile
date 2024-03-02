@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := all
 
-NAME := identification
+NAME := array
 
 CXX := c++
 
