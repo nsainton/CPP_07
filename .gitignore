@@ -1,0 +1,8 @@
+# Dependancies files #
+*.d
+
+# Objects files #
+*.o
+
+# Vim swap files #
+*.swp
