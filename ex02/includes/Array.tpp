@@ -14,13 +14,19 @@ Array<T>::Array( const unsigned int n ) : _size(n){
 	if (! _size)
 		this->_elements = NULL;
 	else
-		this->_elements = new T[n];
+		this->_elements = new T[n](); //value-initialization of the array
 }
 
 template <typename T>
 Array<T>::Array( const Array & other ) : _size(other._size){
 	std::clog << "Array Copy Constructor Called" << std::endl;
+	unsigned int	i(0);
 	this->_elements = new T[other._size];
+	while (i < this->_size)
+	{
+		*(this->_elements + i) = *(other._elements + i);
+		++i;
+	}
 }
 
 template <typename T>
