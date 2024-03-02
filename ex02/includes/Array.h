@@ -4,7 +4,6 @@
 template <typename T>
 class	Array{
 	unsigned int	size;
-	unsigned int	length;
 	T*				elements;
 
 	public:
