@@ -14,4 +14,6 @@ class	Array{
 		T&		operator[]( const unsigned int & );
 		virtual ~Array();
 };
+
+# include "Array.tpp"
 #endif
