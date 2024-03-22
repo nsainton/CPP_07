@@ -1,5 +1,6 @@
 #ifndef __MATH_H__
 # define __MATH_H__
+#include <iostream>
 
 template <typename T>
 void	swap(T & a, T & b){
@@ -19,9 +20,9 @@ T	min(const T & a, const T & b){
 
 template <typename T>
 T	max(const T & a, const T & b){
-	if (a < b)
-		return (b);
-	return (a);
+	if (a > b)
+		return (a);
+	return (b);
 }
 
 #endif
